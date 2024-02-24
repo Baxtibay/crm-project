@@ -1,3 +1,46 @@
+/* CUSTOM-PROPS */
+:root {
+  --black: #323C47;
+  --grey: #707683;
+  --light-grey: #90A0B7;
+  --blue: #109CF1;
+  --dark-blue: #334D6E;
+  --light-blue: rgba(51, 77, 110, 0.5);
+  --placeholder-text-color: #444150;
+  --placeholder-color: rgba(68, 65, 80, 0.5);
+  --bg-color: #F5F6F8;
+}
+
+
+/* FONTS */
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/") format("woff2"),
+    url("../fonts/Poppins-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.woff2") format("woff2"),
+    url("../fonts/Poppins-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"),
+    url("../fonts/Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* GLOBAL */
 html {
   box-sizing: border-box;
@@ -17,17 +60,19 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", "Arial", sans-serif;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--bg-color);
+  color: var(--black);
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
+
 
 /* AUTOFILL-SYLES */
 /* input:-webkit-autofill,
@@ -71,7 +116,9 @@ select:-webkit-autofill:focus {
 /* CONTAINER  */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1064px;
+  padding-left: 24px;
+  padding-right: 24px;
   margin-left: auto;
   margin-right: auto;
 }
