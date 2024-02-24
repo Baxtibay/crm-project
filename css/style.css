@@ -1,21 +1,23 @@
 /* CUSTOM-PROPS */
 :root {
-  --black: #323C47;
+  --black: #323c47;
   --grey: #707683;
-  --light-grey: #90A0B7;
-  --blue: #109CF1;
-  --dark-blue: #334D6E;
+  --light-grey: #90a0b7;
+  --blue: #109cf1;
+  --dark-blue: #334d6e;
   --light-blue: rgba(51, 77, 110, 0.5);
   --placeholder-text-color: #444150;
   --placeholder-color: rgba(68, 65, 80, 0.5);
-  --bg-color: #F5F6F8;
+  --bg-color: #f5f6f8;
+  --border-color: #ebeff2;
+  --icon-color: #c4c4c4;
 }
 
 
 /* FONTS */
 @font-face {
   font-family: "Poppins";
-  src: url("../fonts/") format("woff2"),
+  src: url("../fonts/Poppins-Regular.woff2") format("woff2"),
     url("../fonts/Poppins-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -73,6 +75,214 @@ img {
   height: auto;
 }
 
+.active {
+  color: var(--blue);
+}
+
+
+/* VISUALLY-HIDDEN */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+/* CONTAINER  */
+.container {
+  width: 100%;
+  max-width: 1064px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* SIDEBAR CLOSE START  */
+.sidebar-close {
+  max-width: 68px;
+}
+.sidebar.sidebar-close  {
+  padding: 17px 12px;
+}
+.sidebar.sidebar-close .sidebar__link {
+  padding-left: 7px;
+}
+.sidebar.sidebar-close .user__img {
+  margin-top: 24px;
+}
+.sidebar.sidebar-close .navbar__link {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.sidebar.sidebar-close .sidebar__footer {
+  left: 17px;
+}
+.sidebar.sidebar-close .text {
+  opacity: 0;
+}
+/* SIDEBAR CLOSE PADDING */
+.sidebar.sidebar-close .sidebar__header,
+.sidebar.sidebar-close .user {
+  padding: 0;
+}
+.sidebar.sidebar-close .user .user__img {
+  width: 46px;
+  height: 46px;
+}
+.sidebar.sidebar-close .navbar__link-icon {
+  flex-shrink: 0;
+}
+/* SIDEBAR CLOSE END */
+
+
+/* SIDEBAR OPEN */
+.sidebar-open {
+  max-width: 256px;
+}
+
+.text {
+  transition: opacity .5s ease;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 6px 0px 18px 0px rgba(0, 0, 0, 0.06);
+  transition: all .5s ease;
+}
+
+.sidebar__header {
+  padding: 17px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar__link {
+  text-decoration: none;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.sidebar__main {
+  margin-bottom: auto;
+}
+
+
+/* USER */
+.user {
+  padding: 24px;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+}
+
+.user__picture {
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.user__img {
+  border-radius: 50%;
+}
+
+.user__name {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  color: 192A3E;
+}
+
+.user__email {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  color: var(--grey);
+}
+
+
+/* NAVBAR */
+.navbar__list {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  list-style: none;
+}
+
+.navbar__item:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.navbar__link {
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--dark-blue);
+  white-space: nowrap;
+}
+
+.navbar__link:hover .navbar__link-icon{
+  color: var(--blue);
+}
+
+.navbar__link-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  color: var(--icon-color);
+}
+.navbar__link-text {
+  letter-spacing: 1%;
+}
+
+.sidebar__footer {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+
+
+/* SIDEBAR MENU TOGGLER  */
+.sidebar-menu-toggler {
+  border: 0;
+  background-color: transparent;
+}
+
+.sidebar-menu-toggler:hover  .button-icon {
+  color: var(--blue);
+}
+
+.sidebar-menu-toggler__wrapper {
+  display: flex;
+  align-items: center;
+}
+.button-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--icon-color);
+  margin-right: 14px;
+}
+
+
 
 /* AUTOFILL-SYLES */
 /* input:-webkit-autofill,
@@ -98,27 +308,3 @@ select:-webkit-autofill:focus {
   color: rgba(52, 49, 61, 0.5);
   opacity: 1;
 } */
-
-
-/* VISUALLY-HIDDEN */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-
-/* CONTAINER  */
-.container {
-  width: 100%;
-  max-width: 1064px;
-  padding-left: 24px;
-  padding-right: 24px;
-  margin-left: auto;
-  margin-right: auto;
-}
